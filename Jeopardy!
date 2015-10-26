@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Are You Feeling Okay?</title>
+      <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700italic,500,300' rel='stylesheet' type='text/css'>
+      <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+      <script>
+        $(document).ready(function(){
+            var response = [];
+            $("h1").click(function(){
+              var concern = prompt("You don't look so good. What's the matter with you?");
+                if(response.indexOf(concern) >= 0){
+
+                }else{
+                  console.log("nice");
+                $("h2").html(concern);
+                response.push(concern);
+              }
+            $("h2").click(function(){
+              var roundTwo = prompt("Could you say that again?");
+              if(response.indexOf(roundTwo) >= 0){
+                $("h3").html("So " + concern + "? That just doesn't make any sense.")
+              }else{
+                console.log("hey now");
+                $("h3").html(roundTwo + "? That sounds a little different than what you said last time.");
+              }
+            })
+            })
+
+        });
+
+      </script>
+      <style>
+        body{
+          background-image:url("palmtrees.jpg");
+          background-size:1500px;
+          background-repeat:no-repeat;
+          font-family: 'Ubuntu', sans-serif;
+        }
+        h1{
+          font-weight:300;
+          font-size:50px;
+          color:white;
+          margin:300px 500px 300px 230px;
+        }
+        h1:hover{
+          text-decoration: overline;
+          cursor:alias;
+        }
+        h2{
+          color:pink;
+          margin:30px;
+          font-size:75px;
+          font-weight:700, italic;
+          float:right;
+        }
+        h2:hover{
+          color:red;
+          font-size:80px;
+          font-weight:500;
+          cursor:alias;
+        }
+        h3{
+          color:red;
+          margin:10px;
+          font-size:30px;
+          position:absolute;
+        }
+        h3:hover{
+          font-size:300px;
+          color:purple;
+          transition-duration:4s;
+        }
+      </style>
+    </head>
+
+    <body>
+      <h1>are you feeling okay?</h1>
+      <div>
+        <h2></h2>
+        <h3></h3>
+      </div>
+    </body>
+  </html>
